@@ -27,8 +27,16 @@ sion=1.3
 
 https://github.com/mulesoft/mule-esb-maven-tools/tree/master/archetypes
 
-https://github.com/mulesoft/mulesoft-maven-archetypes
+https://github.com/mulesoft/mulesoft-maven-archetypes	
 
 # References
 
 https://maven.apache.org/archetypes/maven-archetype-archetype/
+
+https://maven.apache.org/guides/introduction/introduction-to-archetypes.html
+
+https://maven.apache.org/guides/mini/guide-creating-archetypes.html
+
+https://rsankarx.wordpress.com/2013/10/24/creating-maven-archetype-using-create-from-project/
+
+
