@@ -8,7 +8,7 @@
       <description>Mule Docker based app with full integration tests</description>
     </archetype>
     <!-- 
-    <archetype>
+    <archetype>	
       <groupId>org.mule.tools.maven2.archetypes</groupId>
       <artifactId>tomcat-wicket-archetype</artifactId>
       <version>1.0.6</version>
