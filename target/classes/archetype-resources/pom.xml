@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>${groupId}</groupId>
+  <artifactId>${artifactId}</artifactId>
+  <version>${version}</version>
+
+  <parent>
+  	<groupId>neilpiper.me</groupId>
+	<artifactId>parent.pom</artifactId>
+	<version>0.0.1_85.765b329</version>
+  </parent>
+
+  <name>${projectName}</name>
+  <description>${descrition}</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  
+  <!-- REPOSITORIES & PLUGIN REPOSITORIES - chicken/egg for travis-ci -->
+	<repositories>
+		<!-- public release repo -->
+		<repository>
+			<id>solveapuzzle-repo</id>
+			<url>https://s3-ap-southeast-2.amazonaws.com/solveapuzzle-repo/release/</url>
+		</repository>
+	</repositories>
+	
+	<!-- Workaround to an inconsistency in Maven that child projects scm tag, appends parent's pom name -->
+	<scm>
+		<url>https://github.com/npiper/hello-world</url>
+		<developerConnection>scm:git:https://github.com/npiper/[repo-name].git</developerConnection>
+	</scm>
+
+</project>
