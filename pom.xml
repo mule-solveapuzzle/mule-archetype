@@ -4,15 +4,18 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>neilpiper.me.mule</groupId>
   <artifactId>mule-archetype</artifactId>
   <version>1.0.0</version>
   <packaging>maven-archetype</packaging>
 
-  <name>Archetype - mule-archetype</name>
+  <name>mule-archetype</name>
+  <parent>
+  	<groupId>neilpiper.me</groupId>
+  	<artifactId>parent.org</artifactId>
+  	<version>0.0.1_43.3908675</version>
+  </parent>
+  <description>Mule archetype project for neilpiper.me domain. Creates a sample mule project for the build infrastructure in neilpiper.me domain for github, travis-ci setup.</description>
 
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,7 +31,7 @@
         <version>3.0.1</version>
       </extension>
     </extensions>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom)  
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -51,6 +54,9 @@
           <version>2.8.2</version>
         </plugin>
       </plugins>
+          -->
     </pluginManagement>
+
   </build>
+  
 </project>
