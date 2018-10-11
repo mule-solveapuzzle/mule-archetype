@@ -10,6 +10,7 @@ mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -Darchetyp
 sion=1.3
 ```
 
+# Parameter options
 ```
 [INFO] Parameter: groupId, Value: neilpiper.me.mule
 [INFO] Parameter: artifactId, Value: mule-archetype
