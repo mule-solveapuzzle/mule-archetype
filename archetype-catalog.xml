@@ -6,7 +6,7 @@
       <version>1.0.0</version>
       <repository>http://repository.muleforge.org/org/mule/tools/maven2/</repository>
       <description>Mule Docker based app with full integration tests</description>
-    </archetype>
+    </archetype>				
     <!-- 
     <archetype>	
       <groupId>org.mule.tools.maven2.archetypes</groupId>
