@@ -23,6 +23,14 @@ sion=1.3
 [INFO] Parameter: artifactId, Value: mule-archetype
 ```
 
+# Building your own Mule archetype using this one
+
+Creates a new Maven project for groupId: `neilpiper.me` and artifactId: `webapi-api`
+
+```
+mvn archetype:generate -e -X -DarchetypeGroupId=neilpiper.me -DarchetypeArtifactId=mule-archetype -DarchetypeVersion=1.0.0 -DgroupId
+=neilpiper.me -DartifactId=webapi-api
+```
 
 # Known Mule references
 
