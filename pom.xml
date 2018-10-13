@@ -9,6 +9,7 @@
   <packaging>maven-archetype</packaging>
 
   <name>mule-archetype</name>
+
   <parent>
   	<groupId>neilpiper.me</groupId>
   	<artifactId>parent.org</artifactId>

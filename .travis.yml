@@ -1,23 +1,22 @@
 language: java
-
 jdk: oraclejdk8
-
 branches:
   except:
-    - /^[0-9]/
-
+  - "/^[0-9]/"
 install: true
-
 before_script:
- - git config --global user.name "${GIT_USER_NAME}"
- - git config --global user.email "${GIT_USER_EMAIL}"
- - cp .travis.settings.xml $HOME/.m2/settings.xml
-
+- git config --global user.name "${GIT_USER_NAME}"
+- git config --global user.email "${GIT_USER_EMAIL}"
+- cp .travis.settings.xml $HOME/.m2/settings.xml
 script:
-  - mvn clean install  -Drevision=${TRAVIS_BUILD_NUMBER}.$(git rev-parse --short HEAD)
-
+- mvn clean install  -Drevision=${TRAVIS_BUILD_NUMBER}.$(git rev-parse --short HEAD)
 after_success:
-  - test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && mvn clean site deploy scm:tag -Drevision=${TRAVIS_BUILD_NUMBER}.$(git rev-parse --short HEAD) -Dusername=${GIT_USER_NAME} -Dpassword=${GITPW}
-
+- test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && mvn clean
+  site deploy scm:tag -Drevision=${TRAVIS_BUILD_NUMBER}.$(git rev-parse --short HEAD)
+  -Dusername=${GIT_USER_NAME} -Dpassword=${GITPW}
 env:
   global:
+  - secure: k0pCYSLbjHs4xaqp5YFvCTj8GEzUTFbbFfFheAxfBxVDvFcS5cKyjTduRXSOOCrm3HXQvePy5JPnaTyJYuQ7VXw9Tzbfy6MfVqQEiXnePjpnBll0egWu04JuXFJbv8M0E7sQY553LlXYjHkqXxiY+aVI+gK0WMPQjRz+f70sG9/F5Lf1QlK6EP/S4BzjMzvp/WAfrw351evTutNocYSGYLcBuDjz+VTv9dciPHtI4AGUEALaonZRDX9WPlXo0gA4gtzvGNynF9NdpBrKFTCKMvnlX77dmwAPLl9pIPF9dH4V+vMOnJ9nTCg8U1kuxfUTASW4umDtJnmi4Hjmka4lsqSFFJ8HCUFER1Dn1Uu8GnQSic3Riuj9ucRZ1Gf5hHyZNKianLH2CXy0ecowqD1kq+seyBMztBCOd9pDkGaXU5iYfEKAi3gd3XjZXibJwXw8XpWLbYvYk/xJ/acSIrY+VxOKlrS4RdGUDKj3DkcGolfItJ9aNgBp/lNpVZgIEoQRp5r5ooMh1NUO4PigLIt2ATlkXWWxEtTlsGNBx0B0po/FkxICBQGxxp1eFouhFlO2sAxud/WRjg7ZFAY1DBnmdvyADXZX4hxQytUYMlAyptnAs4gBBMaDPoPPew0LVj9Yw+qF7GZHwWltq7kgbf5RewS3ja+Juen5l36Ci/3HXwo=
+  - secure: r1lFI8tIMFoL3PLpnAfc4yMvBkOrPScQ1qcFo4gsCMxnpJ+YHJTazINB882EPdpoI9Q2Txg10ucVNzNTx2R1Qxhd90I7mZwaNFPHmfkdIUVXiwOSiGsaWymkkx2CvvSnnyHaxQt469K/IKQx3GW8BvgMjLPNlsxUXWGv0rq7D4VdCAf4550ffr3Ahh9xZw2eVOpBJ3M2FtNSOqGUZPxQh+0bTjAJuuRKuIYvhtAzwjyCwJFZXvNSkIz7VEVnC74thZh0Fqgkd5tyffBzUW+729xac0C1kgmxk/MvA+koQE5OY7ZJSljhzaDVXDkB3fLNiIXCRBLwfT5b/qoYctVBXDRjUl7sobeK6kcspm7GRL0Mu+FMr6jRC/f2YcESIANjyl/sgBMttRZRHb8hgWEaYCQNLUaezG7dmOgPT3hO9lQTFMR97HLrnrYuVdCTpCyDjRMjt/sBuaaEqKmjJWjc0b/3tfBtBvfhdJNnBMKm6k7Pbu0ZCKJbdNOX3qRMDUBjTisBaZxwvsWzKZQRkITedgB/f6IToYR3j8/s6LqFYz2KiNda1YxioQ85TkZY1hBTXX5MN2YH10FWtIR0qAKbeXRPgi+rUzxyjwfBAZnZ+2DZ9EHA9QDeDxhgJR1zSNPJnT+4Ygf0QJxtyBKQRPazYMw0QHD8g1jarIOfBkm0Vtc=
+  - secure: uSkiWzuc6GQf3OpuSHiqAGEVm6l9D5JPJmtPLcmcklEeyyWfpT7Q6SVruAYUIwRzz+LiqJQ8mtH+V/XlYfFMGT68vnfmZcv+HXlo2mvaxoAOsmfGpBibULqJUsAP77cmQgN7iPDQjnZ/TsrBtwC+cnSJQZZV0ftVp5Qdtn9IPzgHcavC+u/rdOR8sT5VbV7tCfDHiASgBBp6X7FL7pv7v672tmnm+bimfuqAgtZPu1ERJwGJL61Il6ECbTRTMDX+seSt/RXexX7JMPev5f/+5fyqWzArQBBmHSmhH9aIL/nk1bzQxnYnjp1HYKA9wR1ZQ7k5L5Qvf9LEs72NRyedgjTRe8AbNgHE5pXmkLjGZXnzPmsyQXD9Fkgv9yAboyK9xIISP64l7Nkc1ZUv+1mQXyWM7gW84Myj4mT2emHVlDoZCOCrzoh1c+P1wTGCTIDmKnb2Vc0nk9NYWrqu5ZonFMRcfRawTEdhGEpnFiA/1vIgAx8ZjQrxZU6xcP4eI0GHgVslg9unc8ODWNrtOPpHpkLfTbDd3VQarVea9G3C+JCKnFjJdsTn/G72FfQroL3oryPXnedFcvwgLshkNENvdCDhV2q8nl9eSKO393I0vnbhHOuyTZhiJ5YFoaStA/8FuLIu4+kSx1PIOJx47F6OKfUTQiPsCab6KX/13jL8hrM=
+  - secure: tO2PyZf/3hjYoThYRyEsK7Xyr585p9WIgpFQcY5AExl2eyaI37AfZxq0X3eKCDSlhoJ4JZl72NkyNBSxcoi9hZRkHzk7eZ2+Afk1XcxQ+FRTEwsZhbdlhK/es6x7pNjBndjqGQIerNeu5Rq/nakffsxKzKUxuoMqVRbNbJa23fo+ebCcNqlmDFdmCpgE57PnvW2rCHjVwpIGH9LIJNPQoGlXvvxYP20YwqLtpwpT4GVi7USXQmqtgSDY1DCSdYAlsoxGt0+e0IEyLy+oyOfk11hOWrO4rk9/HehZHSjnEMvF86OfiG2TKHmpQd8VfRdzpGiIG75asC/lYOt5FeTgAIGbc5js6mHys77ANrJR3KxZ8T0BsQzW8Z5bntPzPukbpPJcVafvBBx5VsQQEadH4N0tfxC046nng/Y1JmFE8ETCkN6ju0wxTo7IZT5DDIYviRmsO/yo5aCECeLeOY4JBdfMfLKyYG8NG+8USqIWxzWa2pKZizUBuG/rh0gFNaOk04BE6HHJz5qtQAJaB9UgdUh3H+eMEF5zsdrWUv2Oe4PlvSZNZ49cvLkVTb4wH1dnvGapjWdYpqAe+iiqm7xCtTPp5WQ+oy4GQqgX0DF6SuT/+J/c7m5EyjXpMOBUkaHYbm7RupogJrnDX47vhxEiSNnlhelvKoxpLZx9JB9N3JY=

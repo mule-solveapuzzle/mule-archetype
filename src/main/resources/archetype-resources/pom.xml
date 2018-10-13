@@ -1,28 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>${groupId}</groupId>
-  <artifactId>${artifactId}</artifactId>
-  <version>${version}</version>
+	<groupId>${groupId}</groupId>
+	<artifactId>${artifactId}</artifactId>
+	<version>${version}</version>
 
-  <parent>
-  	<groupId>neilpiper.me</groupId>
-	<artifactId>parent.pom</artifactId>
-	<version>0.0.1_85.765b329</version>
-  </parent>
+	<parent>
+		<groupId>neilpiper.me</groupId>
+		<artifactId>parent.pom</artifactId>
+		<version>0.0.1_134.1e56c2f</version>
+	</parent>
 
-  <name>${projectName}</name>
-  <description>${descrition}</description>
+	<name>${projectName}</name>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
 
-  
-  <!-- REPOSITORIES & PLUGIN REPOSITORIES - chicken/egg for travis-ci -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.0</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>none</phase>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.0</version>
+
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+
+	<!-- REPOSITORIES & PLUGIN REPOSITORIES - chicken/egg for travis-ci -->
 	<repositories>
 		<!-- public release repo -->
 		<repository>
@@ -30,11 +62,12 @@
 			<url>https://s3-ap-southeast-2.amazonaws.com/solveapuzzle-repo/release/</url>
 		</repository>
 	</repositories>
-	
-	<!-- Workaround to an inconsistency in Maven that child projects scm tag, appends parent's pom name -->
+
+	<!-- Workaround to an inconsistency in Maven that child projects scm tag, 
+		appends parent's pom name -->
 	<scm>
 		<url>https://github.com/npiper/hello-world</url>
-		<developerConnection>scm:git:https://github.com/npiper/[repo-name].git</developerConnection>
+		<developerConnection>scm:git:https://github.com/npiper/${projectName}.git</developerConnection>
 	</scm>
 
 </project>
