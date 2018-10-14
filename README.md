@@ -44,6 +44,8 @@ https://github.com/mulesoft/mulesoft-maven-archetypes
 
 https://mvnrepository.com/artifact/org.mule.tools/mule-example-archetype/3.6.0-M2
 
+https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/tools/mule-project-archetype/3.9.0/
+
 # References
 
 https://maven.apache.org/archetypes/maven-archetype-archetype/
