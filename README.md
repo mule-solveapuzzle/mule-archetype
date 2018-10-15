@@ -48,6 +48,10 @@ https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/too
 
 # References
 
+https://maven.apache.org/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html
+
+https://www.baeldung.com/maven-archetype
+
 https://maven.apache.org/archetypes/maven-archetype-archetype/
 
 https://maven.apache.org/guides/introduction/introduction-to-archetypes.html
