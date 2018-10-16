@@ -32,13 +32,25 @@ mvn archetype:generate -e -X -DarchetypeGroupId=neilpiper.me -DarchetypeArtifact
 =neilpiper.me -DartifactId=webapi-api
 ```
 
+# Processing Class 
+
+Need a processing class `org.mule.tools.maven.archetype.ProjectArchetypeMojo' from the jar file mule-example-archetype.jar.
+
 # Known Mule references
 
 https://github.com/mulesoft/mule-esb-maven-tools/tree/master/archetypes
 
 https://github.com/mulesoft/mulesoft-maven-archetypes	
 
+https://mvnrepository.com/artifact/org.mule.tools/mule-example-archetype/3.6.0-M2
+
+https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/tools/mule-project-archetype/3.9.0/
+
 # References
+
+https://maven.apache.org/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html
+
+https://www.baeldung.com/maven-archetype
 
 https://maven.apache.org/archetypes/maven-archetype-archetype/
 
