@@ -1,11 +1,13 @@
 package $package;
 
 /**
- * Hello world!
+ * Hello world App class.
  *
  */
 public class App {
-  /** Increments a function.
+  
+  /**
+   * Increments a function.
    * 
    */
   public int increment(int i) {

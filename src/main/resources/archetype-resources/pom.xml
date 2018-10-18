@@ -45,6 +45,40 @@
 		<mule.munit.support.version>3.8.0</mule.munit.support.version>
 
 	</properties>
+	
+	<dependencies>
+	<!-- Mule Dependencies -->
+    
+        <dependency>
+            <groupId>org.mule</groupId>
+            <artifactId>mule-core</artifactId>
+            <version>${muleVersion}</version>
+        </dependency>
+        <!-- Xml configuration -->
+        <dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-spring-config</artifactId>
+            <version>${muleVersion}</version>
+        </dependency>
+	<!-- Mule Transports -->
+
+#foreach($item in $transports.split(','))
+        <dependency>
+            <groupId>org.mule.transports</groupId>
+            <artifactId>mule-transport-${item}</artifactId>
+            <version>${muleVersion}</version>
+        </dependency>
+#end
+
+#foreach($item in $modules.split(','))
+        <dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-${item}</artifactId>
+            <version>${muleVersion}</version>	
+        </dependency>
+#end	
+	
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -99,8 +133,8 @@
 	<!-- Workaround to an inconsistency in Maven that child projects scm tag, 
 		appends parent's pom name -->
 	<scm>
-		<url>https://github.com/npiper/hello-world</url>
-		<developerConnection>scm:git:https://github.com/npiper/${projectName}.git</developerConnection>
+		<url>https://github.com/npiper/${artifactId}</url>
+		<developerConnection>scm:git:https://github.com/npiper/${artifactId}.git</developerConnection>
 	</scm>
 
 </project>

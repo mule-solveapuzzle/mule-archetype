@@ -17,28 +17,34 @@
 		<requiredProperty key="EE">
 			<defaultValue>false</defaultValue>
 		</requiredProperty>
-        <requiredProperty key="domainGroupId">
-            <defaultValue>empty</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="domainArtifactId">
-            <defaultValue>empty</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="domainVersion">
-            <defaultValue>empty</defaultValue>
-        </requiredProperty>
+		<requiredProperty key="description">
+		    <defaultValue>Mule base project description</defaultValue>
+		</requiredProperty>
+		<!-- 
+		<requiredProperty key="domainGroupId">
+			<defaultValue>empty</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="domainArtifactId">
+			<defaultValue>empty</defaultValue>
+		</requiredProperty>
+		<requiredProperty key="domainVersion">
+			<defaultValue>empty</defaultValue>
+		</requiredProperty>
+		-->
 	</requiredProperties>
 	<fileSets>
-		<fileSet filtered="true" packaged="false" encoding="UTF-8">
-			<directory>./</directory>
-				<includes>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory></directory>
+			<includes>
 				<include>mule-project.xml</include>
-                <include>*.properties</include>
-                <include>*.sh</include>
-                <include>*.bat</include>
-                <include>*.md</include>
+				<include>*.sh</include>
+				<include>*.bat</include>
+				<include>*.md</include>
+				<include>.travis.settings.xml</include>
+				<include>.travis.yml</include>
 			</includes>
 		</fileSet>
-	
+
 		<fileSet filtered="true" packaged="true" encoding="UTF-8">
 			<directory>src/main/java</directory>
 		</fileSet>
@@ -46,7 +52,7 @@
 			<directory>src/main/app</directory>
 			<includes>
 				<include>**/*.xml</include>
-                <include>**/*.properties</include>
+				<include>**/*.properties</include>
 			</includes>
 		</fileSet>
 		<fileSet filtered="true" encoding="UTF-8">
@@ -62,16 +68,19 @@
 			</includes>
 		</fileSet>
 		<fileSet filtered="true" encoding="UTF-8">
+			<directory>src/test/docker</directory>
+			<includes>
+				<include>**/*.*</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
 			<directory>src/test/resources</directory>
 		</fileSet>
 		<fileSet filtered="true" encoding="UTF-8">
-			<directory>src/main/resources</directory>
+			<directory>src/test/munit</directory>
 		</fileSet>
 		<fileSet filtered="true" encoding="UTF-8">
-			<directory></directory>
-			<includes>
-				<include>README.txt</include>
-			</includes>
+			<directory>src/main/resources</directory>
 		</fileSet>
 	</fileSets>
 </archetype-descriptor>
