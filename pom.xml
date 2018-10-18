@@ -63,5 +63,10 @@
 		</pluginManagement>
 
 	</build>
+	
+		<scm>
+		<url>https://github.com/npiper/mule-archetype</url>
+		<developerConnection>scm:git:https://github.com/npiper/mule-archetype.git</developerConnection>
+	</scm>
 
 </project>
