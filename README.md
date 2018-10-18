@@ -36,9 +36,13 @@ mvn archetype:generate -e -X -DarchetypeGroupId=neilpiper.me -DarchetypeArtifact
 
 Need a processing class `org.mule.tools.maven.archetype.ProjectArchetypeMojo' from the jar file mule-example-archetype.jar.
 
+# Archetype models
+
+[archetype-metadata](http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd)
+
 # Known Mule references
 
-https://github.com/mulesoft/mule-esb-maven-tools/tree/master/archetypes
+[Mulesoft esb archetypes](https://github.com/mulesoft/mule-esb-maven-tools/tree/master/archetypes)
 
 https://github.com/mulesoft/mulesoft-maven-archetypes	
 
@@ -50,9 +54,9 @@ https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/too
 
 https://maven.apache.org/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html
 
-https://www.baeldung.com/maven-archetype
+[Baeldung Maven Archetypes](https://www.baeldung.com/maven-archetype)
 
-https://maven.apache.org/archetypes/maven-archetype-archetype/
+[Maven - archetypes](https://maven.apache.org/archetypes/maven-archetype-archetype/)
 
 https://maven.apache.org/guides/introduction/introduction-to-archetypes.html
 
@@ -60,4 +64,13 @@ https://maven.apache.org/guides/mini/guide-creating-archetypes.html
 
 https://rsankarx.wordpress.com/2013/10/24/creating-maven-archetype-using-create-from-project/
 
+# MQ Docker / Docker
+
+[IBM MQ Docker image](https://hub.docker.com/r/ibmcom/mq/)
+
+[Using IBM MQ Docker](https://github.com/ibm-messaging/mq-container/blob/master/docs/usage.md)
+
+# Local Keys / Certs for testing? Docker setup
+
+http://www.mojohaus.org/keytool/keytool-maven-plugin/usage.html
 

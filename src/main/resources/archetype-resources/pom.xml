@@ -7,6 +7,7 @@
 	<groupId>${groupId}</groupId>
 	<artifactId>${artifactId}</artifactId>
 	<version>${version}</version>
+	<packaging>mule</packaging>
 
 	<parent>
 		<groupId>neilpiper.me</groupId>
@@ -14,11 +15,35 @@
 		<version>0.0.1_134.1e56c2f</version>
 	</parent>
 
-	<name>${projectName}</name>
+	<name>${artifactId}</name>
 
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<!-- Tools properties -->
+		<eclipsePluginVersion>2.5</eclipsePluginVersion>
+		<vmtype>org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType</vmtype>
+		<jdkName>JavaSE-${java.version}</jdkName>
+		<jdk.version>${java.version}</jdk.version>
+
+		<!-- Mule versions -->
+		<mule.version>${muleVersion}</mule.version>
+		<apigw.version>${muleVersion}</apigw.version>
+		<apikit.version>${muleVersion}</apikit.version>
+
+		<!-- Database Drivers -->
+		<!-- Database driver versions -->
+		<mysql.version>5.1.39</mysql.version>
+		<hsql.version></hsql.version>
+
+		<!-- Messaging connectors -->
+		<ibmmq.version></ibmmq.version>
+
+		<mule.tools.version>1.2</mule.tools.version>
+		<munit.version>1.2.0</munit.version>
+		<mule.munit.support.version>3.8.0</mule.munit.support.version>
+
 	</properties>
 
 	<build>
@@ -35,6 +60,14 @@
 						<phase>none</phase>
 					</execution>
 				</executions>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.mule.tools</groupId>
+				<artifactId>maven-mule-plugin</artifactId>
+				<version>1.4</version>
+				<extensions>true</extensions>
 			</plugin>
 
 		</plugins>
