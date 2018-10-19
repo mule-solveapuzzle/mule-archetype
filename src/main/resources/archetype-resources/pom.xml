@@ -45,63 +45,78 @@
 		<mule.munit.support.version>3.8.0</mule.munit.support.version>
 
 	</properties>
-	
+
 	<dependencies>
-	<!-- Mule Dependencies -->
-    
-        <dependency>
-            <groupId>org.mule</groupId>
-            <artifactId>mule-core</artifactId>
-            <version>${muleVersion}</version>
-        </dependency>
-        <!-- Xml configuration -->
-        <dependency>
-            <groupId>org.mule.modules</groupId>
-            <artifactId>mule-module-spring-config</artifactId>
-            <version>${muleVersion}</version>
-        </dependency>
-	<!-- Mule Transports -->
+		<!-- Mule Dependencies -->
 
-#foreach($item in $transports.split(','))
-        <dependency>
-            <groupId>org.mule.transports</groupId>
-            <artifactId>mule-transport-${item}</artifactId>
-            <version>${muleVersion}</version>
-        </dependency>
-#end
+		<dependency>
+			<groupId>org.mule</groupId>
+			<artifactId>mule-core</artifactId>
+			<version>${muleVersion}</version>
+		</dependency>
+		<!-- Xml configuration -->
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-spring-config</artifactId>
+			<version>${muleVersion}</version>
+		</dependency>
+		<!-- Mule Transports -->
 
-#foreach($item in $modules.split(','))
-        <dependency>
-            <groupId>org.mule.modules</groupId>
-            <artifactId>mule-module-${item}</artifactId>
-            <version>${muleVersion}</version>	
-        </dependency>
-#end	
-	
-	  <!-- for testing -->
-        <dependency>
-            <groupId>org.mule.tests</groupId>
-            <artifactId>mule-tests-functional</artifactId>
-            <version>${muleVersion}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>mockobjects</groupId>
-            <artifactId>mockobjects-core</artifactId>
-            <version>0.09</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.9</version>
-            <scope>test</scope>
-        </dependency>
-	
+		#foreach($item in $transports.split(','))
+		<dependency>
+			<groupId>org.mule.transports</groupId>
+			<artifactId>mule-transport-${item}</artifactId>
+			<version>${muleVersion}</version>
+		</dependency>
+		#end
+
+		#foreach($item in $modules.split(','))
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-${item}</artifactId>
+			<version>${muleVersion}</version>
+		</dependency>
+		#end
+
+		<!-- for testing -->
+		<dependency>
+			<groupId>org.mule.tests</groupId>
+			<artifactId>mule-tests-functional</artifactId>
+			<version>${muleVersion}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>mockobjects</groupId>
+			<artifactId>mockobjects-core</artifactId>
+			<version>0.09</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.9</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
+
+			<!-- Known bug on maven install, deploy plugin dependencies - need to force lower versions -->
+			<!--  https://support.mulesoft.com/s/article/Mule-Maven-Plugin-fails-during-deploy-with-error-Failed-to-execute-goal-org-apache-maven-plugins-maven-deploy-plugin-3-0-0-M1-deploy -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<version>2.5.2</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.2</version>
+			</plugin>
+
+
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
