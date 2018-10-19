@@ -44,11 +44,11 @@ Need a processing class `org.mule.tools.maven.archetype.ProjectArchetypeMojo' fr
 
 [Mulesoft esb archetypes](https://github.com/mulesoft/mule-esb-maven-tools/tree/master/archetypes)
 
-https://github.com/mulesoft/mulesoft-maven-archetypes	
+[Mulesoft Maven archetypes github](https://github.com/mulesoft/mulesoft-maven-archetypes)
 
-https://mvnrepository.com/artifact/org.mule.tools/mule-example-archetype/3.6.0-M2
+[Mule maven repo - mule-example-archetype 3.6.0-M2](https://mvnrepository.com/artifact/org.mule.tools/mule-example-archetype/3.6.0-M2)
 
-https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/tools/mule-project-archetype/3.9.0/
+[Mule maven repo - mule-project-archetype 3.9.0](https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/tools/mule-project-archetype/3.9.0/)
 
 # References
 
