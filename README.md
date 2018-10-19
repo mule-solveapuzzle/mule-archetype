@@ -74,3 +74,6 @@ https://rsankarx.wordpress.com/2013/10/24/creating-maven-archetype-using-create-
 
 http://www.mojohaus.org/keytool/keytool-maven-plugin/usage.html
 
+# Velocity syntax guide
+
+http://velocity.apache.org/engine/1.7/user-guide.html#methods

@@ -17,8 +17,8 @@ before_script:
 script:
 - mvn clean install  -Drevision=${TRAVIS_BUILD_NUMBER}.$(git rev-parse --short HEAD)
 after_success:
-- test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && mvn clean
-  site deploy scm:tag -Drevision=${TRAVIS_BUILD_NUMBER}.$(git rev-parse --short HEAD)
+- test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && mvn 
+  site deploy scm:tag -DdeployOnly -Drevision=${TRAVIS_BUILD_NUMBER}.$(git rev-parse --short HEAD)
   -Dusername=${GIT_USER_NAME} -Dpassword=${GITPW}
 env:
   global:
