@@ -26,15 +26,15 @@ During archetype creation the following parameters are requested.
 
 <table>
 <tr><th>Parameter</th><th>Example</th><th>Description</th></tr>
-<tr><td>groupId</td><td>com.example</td><td>Group id of the new maven project to be created</td></tr>
-<tr><td>artifactId</td><td>mule-project</td><td>Artifact id of the new maven project to be created</td></tr>
-<tr><td>version</td><td>1.0.0</td><td>Initial Version of the new maven project to be created</td></tr>
-<tr><td>package</td><td>com.example.mule</td><td>Java package name - root level</td></tr>
-<tr><td>transports</td><td>http,jms,vm,file</td><td>Comma separated list of [Mule transport dependencies](https://mvnrepository.com/artifact/org.mule.transports) to add as dependencies.</td></tr>
-<tr><td>modules</td><td>db,xml,scripting,json,ws</td><td>Comma separated list of [Mule module dependencies](https://mvnrepository.com/artifact/org.mule.modules) to add as dependencies.</td></tr>
-<tr><td>muleVersion</td><td>3.9.0</td><td>The release version of mule to base the project on.</td></tr>
-<tr><td>EE</td><td>true</td><td>Use mule enterprise edition?</td></tr>
-<tr><td>description</td><td>A mule example project.</td><td>Descripiton for the project to be placed in POM and initial mule sample flows.</td></tr>
+<tr><td><code>groupId</code></td><td><code>com.example</code></td><td>Group id of the new maven project to be created</td></tr>
+<tr><td><code>artifactId</code></td><td><code>mule-project</code></td><td>Artifact id of the new maven project to be created</td></tr>
+<tr><td><code>version</code></td><td><code>1.0.0</code></td><td>Initial Version of the new maven project to be created</td></tr>
+<tr><td><code>package</code></td><td><code>com.example.mule</code></td><td>Java package name - root level</td></tr>
+<tr><td><code>transports</code></td><td><code>http,jms,vm,file</code></td><td>Comma separated list of <a href="https://mvnrepository.com/artifact/org.mule.transports">Mule transports</a> to add as dependencies.</td></tr>
+<tr><td><code>modules</code></td><td><code>db,xml,scripting,json,ws</code></td><td>Comma separated list of <a href="https://mvnrepository.com/artifact/org.mule.modules">Mule modules</a> to add as dependencies.</td></tr>
+<tr><td><code>muleVersion</code></td><td><code>3.9.0</code></td><td>The release version of mule to base the project on.</td></tr>
+<tr><td><code>EE</code></td><td><code>true</code></td><td>Use mule enterprise edition?</td></tr>
+<tr><td><code>description</code></td><td><code>'A mule example project.'</code></td><td>Descripiton for the project to be placed in POM and initial mule sample flows.</td></tr>
 </table>
 
 # Archetype models
