@@ -20,17 +20,7 @@
 		<requiredProperty key="description">
 		    <defaultValue>Mule base project description</defaultValue>
 		</requiredProperty>
-		<!-- 
-		<requiredProperty key="domainGroupId">
-			<defaultValue>empty</defaultValue>
-		</requiredProperty>
-		<requiredProperty key="domainArtifactId">
-			<defaultValue>empty</defaultValue>
-		</requiredProperty>
-		<requiredProperty key="domainVersion">
-			<defaultValue>empty</defaultValue>
-		</requiredProperty>
-		-->
+
 	</requiredProperties>
 	<fileSets>
 		<fileSet filtered="true" encoding="UTF-8">
@@ -42,6 +32,7 @@
 				<include>*.md</include>
 				<include>.travis.settings.xml</include>
 				<include>.travis.yml</include>
+				<include>.gitignore</include>
 			</includes>
 		</fileSet>
 
