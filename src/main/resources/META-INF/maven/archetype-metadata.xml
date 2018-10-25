@@ -27,7 +27,7 @@
 			<directory></directory>
 			<includes>
 				<include>mule-project.xml</include>
-				<include>*.sh</include>
+				<include>gitsetup.sh</include>
 				<include>*.bat</include>
 				<include>*.md</include>
 				<include>.travis.settings.xml</include>
