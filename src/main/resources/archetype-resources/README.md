@@ -29,6 +29,11 @@ Make sure your local git environment user is configured as per the [First time G
 
 Create an initial github repository with the same name as the `artifactId` you created the project with.
 
+```
+curl -u 'your_git_user' https://api.github.com/user/repos -d '{"name":"your_artifact_id"}'
+```
+
+
 Run the gitsetup.sh script.
 
 ```
