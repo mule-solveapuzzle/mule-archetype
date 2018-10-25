@@ -16,8 +16,8 @@ sion=1.3
 Creates a new Maven project for groupId: `neilpiper.me` and artifactId: `webapi-api`
 
 ```
-mvn archetype:generate -e -X -DarchetypeGroupId=neilpiper.me -DarchetypeArtifactId=mule-archetype -DarchetypeVersion=1.0.0_25.8785e6
-1 -DgroupId=neilpiper.me -DartifactId=webapi-api
+mvn archetype:generate -e -X -DarchetypeGroupId=neilpiper.me -DarchetypeArtifactId=mule-archetype \
+ -DarchetypeVersion=1.0.0_30.cfa736c -DgroupId=neilpiper.me -DartifactId=webapi-api
 ```
 
 ## Parameters
