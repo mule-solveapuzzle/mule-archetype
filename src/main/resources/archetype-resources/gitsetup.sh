@@ -4,8 +4,8 @@
 response=$(curl --write-out %{http_code} --silent --output /dev/null https://github.com/npiper/${artifactId})
 
 # Check status code
-if [[ "$status_code" -ne 200 ]] ; then
-  echo "${projectName} repository has not been created"
+if [[ "$response" -ne 200 ]] ; then
+  echo "${artifactId} repository has not been created - to create try this line \n curl -u 'npiper' https://api.github.com/user/repos -d '{\"name\":\"${artifactId}\"}'"
   exit 1;
 fi
 
@@ -13,7 +13,7 @@ fi
 git init
 git add . && git commit -am "initial commit"
 git remote add origin https://github.com/npiper/${artifactId}.git
-git push origin
+git push --set-upstream origin master
 
 # Create 'develop' branch & push to repo
 git branch develop
