@@ -19,7 +19,7 @@
 
 
 	<properties>
-	    <revision>0-SNAPSHOT</revision>
+		<revision>0-SNAPSHOT</revision>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
@@ -47,6 +47,18 @@
 						<archetypeFilteredExtentions>js,json,md,java,xml,txt,groovy,jsp,vm,html,properties,md</archetypeFilteredExtentions>
 					</configuration>
 				</plugin>
+
+				<!-- Bug in archetype creation and .gitignore files -->
+				<!-- https://stackoverflow.com/questions/32580244/gitignore-file-is-not-copied-to-archetype-jar-workarounds -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.0.2</version>
+					<configuration>
+						<addDefaultExcludes>false</addDefaultExcludes>
+					</configuration>
+				</plugin>
+
 				<plugin>
 					<groupId>org.mule.tools</groupId>
 					<artifactId>maven-mule-plugin</artifactId>
@@ -63,8 +75,8 @@
 		</pluginManagement>
 
 	</build>
-	
-		<scm>
+
+	<scm>
 		<url>https://github.com/npiper/mule-archetype</url>
 		<developerConnection>scm:git:https://github.com/npiper/mule-archetype.git</developerConnection>
 	</scm>
