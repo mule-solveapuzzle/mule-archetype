@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>mule-archetype</artifactId>
-	<version>1.0.0_${revision}</version>
+	<version>1.0.0</version>
 	<packaging>maven-archetype</packaging>
 
 	<name>mule-archetype</name>
@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>neilpiper.me</groupId>
 		<artifactId>parent.org</artifactId>
-		<version>0.0.1_43.3908675</version>
+		<version>(,1.0]</version>
 	</parent>
 	<description>Mule archetype project for neilpiper.me domain. Creates a sample mule project for the build infrastructure in neilpiper.me domain for github, travis-ci setup.</description>
 
@@ -21,8 +21,8 @@
 	<properties>
 		<revision>0-SNAPSHOT</revision>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<build>
